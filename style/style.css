@@ -65,4 +65,115 @@ body {
     top: 15rem;
     left: 5rem;
     position: absolute;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.store-list-container::-webkit-scrollbar {
+    display: none;
+  }
+
+.store-info-window {
+    min-width: 12rem;
+    font-size: 1rem;
+    padding: 0.3rem;
+}
+
+.store-info-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgba(0,0,0,0.87);
+}
+
+.store-info-open-status {
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ccc;
+    color: rgba(0,0,0,0.57);
+}
+
+.store-info-address, .store-info-phone {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    background-color: #1985A1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    margin-right: 0.5rem;
+}
+
+.store-info-phone a, .store-info-address {
+    text-decoration: none;
+    color: #514c4c;
+}
+
+.stores-list {
+    flex-grow: 1;
+    padding-left: 1rem;
+    padding-right: 1rem;   
+}
+
+.store-address {
+    font-size: 1.5rem;
+    color: #514c4c;
+    margin-top: 1.5rem;
+}
+
+.store-address span {
+    display: block;
+}
+
+.store-phone-number {
+    color: #b5adad;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.store-container {
+    border-bottom: 1px solid #979797;
+    display: flex;
+    flex-grow: 1;
+}
+
+.store-info-container {
+    flex-grow: 1;
+}
+
+.store-number {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #454e53;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.store-number-container {
+    display: flex;
+    align-items: center;
+}
+
+.store-container-background {
+    flex-grow: 1;
+    display: flex;
+    padding: 0rem 0.5rem;
+    margin: 0.5rem 0rem;
+    border-radius: 1rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.store-container-background:hover {
+    background-color: #cccccc87;
 }
