@@ -6,11 +6,31 @@
         <title>Title</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
         <link rel="stylesheet" href="style/style.css">
     </head>
-    <body>
-        <div class="container home-page">
+<body>
+    <div class="title">
+        Store Locator
+    </div>
+    <div class="search-container">
+        <div class="search">
+            <input type="text" id="zip-code" placeholder="Search zip-code">
+            <i class="fas fa-search"></i>
         </div>
-        <script src="js/index.js" async defer></script>
-    </body>
+    </div>
+    <div class="store-list-container">
+        
+    </div>
+
+    <div id="map"></div>
+
+
+    <script src="js/theme.js"></script>
+    <script src="js/index.js" async defer></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoNSK4MQZPhqRFS9B20zthJczFaloIpYo&callback=initMap">
+    </script>
+</body>
 </html>
