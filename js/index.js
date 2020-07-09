@@ -7,16 +7,33 @@ function initMap ()  {
 
   map = new google.maps.Map(document.getElementById("map"), {
       center: mylatlng,
-      zoom: 8,
+      zoom: 11,
       styles: nightTheme
   });
   infoWindow = new google.maps.InfoWindow();
-  getStores();
+
+}
+
+const onEnter = (e) => {
+  if (e.key == 'Enter') {
+    getStores();
+  }
+}
+
+const noStoresFound = () => {
+  const html = `
+    <div class="no-stores-found">
+      No store found...
+    </div>
+  `
+  document.querySelector('.stores-list').innerHTML = html;
 }
 
 const getStores = () => {
+  const zipCode = document.getElementById('zip-code').value;
   const API_URL = 'http://localhost:3000/api/stores';
-  fetch(API_URL)
+  const fullUrl = `${API_URL}?zip_code=${zipCode}`
+  fetch(fullUrl)
   .then((response) => {
     if (response.status == 200){
       return response.json()
@@ -24,9 +41,16 @@ const getStores = () => {
       throw new Error(response.status)
     }
   }).then((data) => {
-    searchLocationNear(data);
-    setStoreList(data);
-    setOnClickListener();
+    if (data.length > 0) {
+      clearLocations();
+      searchLocationNear(data);
+      setStoreList(data);
+      setOnClickListener();
+    } else {
+      clearLocations();
+      noStoresFound();
+    }
+    
     // console.log(data)
   })
 }
@@ -118,6 +142,14 @@ const createMarker = (latlng, name, address, storeNumber, openStatusText, phone)
     infoWindow.open(map, marker);
   });
   markers.push(marker);
+}
+
+const clearLocations = () =>{
+  infoWindow.close();
+  for (let i=0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers.length = 0;
 }
 
 initMap()

@@ -54,6 +54,7 @@ body {
     color: #333333;
     font-size: 1.5rem;
     outline: none;
+    cursor: pointer;
 }
 
 .store-list-container {
@@ -120,6 +121,7 @@ body {
     flex-grow: 1;
     padding-left: 1rem;
     padding-right: 1rem;   
+    height: 100%;
 }
 
 .store-address {
@@ -176,4 +178,31 @@ body {
 
 .store-container-background:hover {
     background-color: #cccccc87;
+}
+
+.intro {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.enter-zip {
+    color: #514c4c;
+    font-size: 1.5rem;
+}
+
+.find-stores {
+    color: #1985a1;
+    font-size: 1.2rem;
+}
+
+.no-stores-found {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #514c4c;
+    font-size: 1.2rem;
 }

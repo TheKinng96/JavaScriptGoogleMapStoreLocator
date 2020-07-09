@@ -16,13 +16,16 @@
     </div>
     <div class="search-container">
         <div class="search">
-            <input type="text" id="zip-code" placeholder="Search zip-code">
-            <i class="fas fa-search"></i>
+            <input type="text" id="zip-code" onkeyup="onEnter(event)" placeholder="Search zip-code">
+            <i class="fas fa-search" onClick="getStores()"></i>
         </div>
     </div>
     <div class="store-list-container">
         <div class="stores-list">
-            
+            <div class="intro">
+                <span class="enter-zip">Enter zip code</span>
+                <span class="find-stores">Find stores near you</span>
+            </div>
         </div>
     </div>
 
